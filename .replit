@@ -1,5 +1,5 @@
 compile = "javac -classpath .:target/dependency/* -d . $(find . -type f -name '*.java')"
-run = "java -classpath .:target/dependency/* Main"
+run = "java -classpath .:target/dependency/* QFuncTwo"
 entrypoint = "src/main/java/Main.java"
 hidden = ["**/*.class"]
 
@@ -59,6 +59,13 @@ classPaths = ["."]
 mainClass = "Main"
 
 [deployment]
-build = ["javac", "-classpath", ".:target/dependency/*", "-d", ".", "$(find . -type f -name '*.java')"]
-run = ["java", "-classpath", ".:target/dependency/*", "Main"]
+build = [
+  "javac",
+  "-classpath",
+  ".:target/dependency/*",
+  "-d",
+  ".",
+  "$(find . -type f -name '*.java')",
+]
+run = ["java", "-classpath", ".:target/dependency/*", "QFuncTwo"]
 deploymentTarget = "cloudrun"
